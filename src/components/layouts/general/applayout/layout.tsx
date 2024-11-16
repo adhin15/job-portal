@@ -1,7 +1,6 @@
 'use client'
-import react, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";

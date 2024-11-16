@@ -4,7 +4,7 @@ import useGetJobs from "./jobList.hook"
 import Loader from "@/components/shared/Skeleton/loader";
 
 const JobList = () => {
-    const { data, setFilter, onSearch, payload, setPayload, isjobDataLoading, filter } = useGetJobs();
+    const { data, setFilter, onSearch, payload, setPayload, isjobDataLoading } = useGetJobs();
     return (
         <div className="flex flex-col gap-2 mb-8">
             <div className="md:flex mb-3">

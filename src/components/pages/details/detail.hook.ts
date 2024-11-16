@@ -1,6 +1,4 @@
 
-
-import { useEffect } from "react";
 import useGetPositionDetail from "./hooks/useGetDetail";
 import { useParams } from 'next/navigation'
 
