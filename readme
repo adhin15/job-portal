@@ -1,0 +1,2 @@
+npm install --legacy-peer-deps
+if encounter error in aos dependencies, execute npm install --save @types/aos --force
