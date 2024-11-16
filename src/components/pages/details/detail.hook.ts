@@ -13,9 +13,6 @@ const useDetail = () =>{
         id: params?.id
         
     },);
-    useEffect(()=>{
-        console.log('log param', detailData)
-    },[detailData])
     return{
         detailData,
         isDetailDataLoading

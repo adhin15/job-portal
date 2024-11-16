@@ -7,15 +7,16 @@ const useGetJobs = () =>{
         page:1
     })
     const [filter,setFilter] = useState({});
-    const [lazyLoader, setLazyLoader] = useState(true)
 
     const { data: jobData,
         isLoading: isjobDataLoading,
-        isError:isError,
     } = useGetPositionData(payload);
  
     useEffect(()=>{
         setData([])
+    },[])
+    
+    useEffect(()=>{
         if(jobData){
             setData((prevData) => [...prevData, ...jobData]);
         }
