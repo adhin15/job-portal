@@ -15,4 +15,10 @@ export default {
     },
   },
   plugins: [],
+  mode: 'jit',
+  safelist: [
+    'bg-[#ffc300]',
+    'border-[#ffc300]',
+    'text-[#ffc300]',
+  ]
 } satisfies Config;
