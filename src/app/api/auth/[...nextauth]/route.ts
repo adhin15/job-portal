@@ -13,21 +13,6 @@ const providers= [
     }),
     // ...add more providers here
 ];
-export default NextAuth({
-    // Configure one or more authentication providers
-    providers: [
-        GoogleProvider({
-            clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID as string,
-            clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET as string,
-        }),
-        GithubProvider({
-            clientId: process.env.NEXT_PUBLIC_GITHUB_ID as string,
-            clientSecret: process.env.NEXT_PUBLIC_GITHUB_SECRET as string,
-        }),
-        // ...add more providers here
-    ],
-    
-})
 export async function GET( req:any,res:any ) {
     return NextAuth(req,res,{providers:providers})
     }
