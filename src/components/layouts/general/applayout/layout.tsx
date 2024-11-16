@@ -6,6 +6,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import "../../../../app/globals.css";
 import Aos from "aos";
+import { SessionProvider } from "next-auth/react"
 import 'aos/dist/aos.css';
 
 const Layout = ({
@@ -39,11 +40,13 @@ const Layout = ({
                 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
             </Head>
             <body>
-                <QueryClientProvider client={queryClient}>
-                    <Navbar />
-                    <div className="min-h-screen px-8 pt-[68px]">{children}</div>
-                    <Footer />
-                </QueryClientProvider>
+                <SessionProvider>
+                    <QueryClientProvider client={queryClient}>
+                        <Navbar />
+                        <div className="min-h-screen px-8 pt-[68px]">{children}</div>
+                        <Footer />
+                    </QueryClientProvider>
+                </SessionProvider>
 
             </body>
 
