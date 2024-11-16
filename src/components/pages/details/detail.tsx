@@ -44,8 +44,32 @@ const DetailJob = () => {
                     </>
                 }
             </div>
-            <div className="flex">
-                <div className="w-2/3 pe-3">
+            <div className="md:flex">
+                <div className="md:hidden block md:w-1/3 ps-2">
+                    {isDetailDataLoading ?
+                        <Loader size={128} /> :
+                        <>
+                            <div className="border-2 p-4 mb-4">
+                                <h4 className="text-md text-[#FFC300] font-bold border-b-2 mb-4 py-2">
+                                    {detailData?.company}
+                                </h4>
+                                <img className="mb-4 w-full object-cover	" src={detailData?.company_logo}
+                                    style={{}}
+                                    alt="err"
+                                    onError={addDefaultImg}
+                                />
+                                <Link className="ellipsis block underline hover:underline-offset-4 text-[#FFC300]" href={detailData?.url || ''}>
+                                    {detailData?.url}
+                                </Link>
+                            </div>
+                            <div>
+                                <div id="detail-html" dangerouslySetInnerHTML={{ __html: detailData?.how_to_apply }}></div>
+                            </div>
+                        </>
+                    }
+
+                </div>
+                <div className="md:w-2/3 pe-3 mb-4">
                     <div>
                         {isDetailDataLoading ?
                             <Loader size={128} /> :
@@ -53,7 +77,7 @@ const DetailJob = () => {
                         }
                     </div>
                 </div>
-                <div className="w-1/3 ps-2">
+                <div className="hidden md:block md:w-1/3 ps-2">
                     {isDetailDataLoading ?
                         <Loader size={128} /> :
                         <>
@@ -66,7 +90,9 @@ const DetailJob = () => {
                                     alt="err"
                                     onError={addDefaultImg}
                                 />
-                                <Link className="underline hover:underline-offset-4 text-[#FFC300]" href={detailData?.url || ''}>
+                                <Link className="ellipsis block underline hover:underline-offset-4 text-[#FFC300]" href={detailData?.url || ''}
+
+                                >
                                     {detailData?.url}
                                 </Link>
                             </div>

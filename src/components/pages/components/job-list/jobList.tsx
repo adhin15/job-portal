@@ -7,8 +7,8 @@ const JobList = () => {
     const { data, setFilter, onSearch, payload, setPayload, isjobDataLoading, filter } = useGetJobs();
     return (
         <div className="flex flex-col gap-2 mb-8">
-            <div className="flex mb-3">
-                <div className="w-1/4 flex flex-col">
+            <div className="md:flex mb-3">
+                <div className="md:w-1/4 flex flex-col">
                     <label className="text-lg">
                         Job Description
                     </label>
@@ -22,7 +22,7 @@ const JobList = () => {
                         }}
                     />
                 </div>
-                <div className="w-1/4 flex flex-col">
+                <div className="w-full md:w-1/4 flex flex-col">
                     <label className="text-lg">
                         Location
                     </label>
@@ -36,7 +36,7 @@ const JobList = () => {
                         }}
                     />
                 </div>
-                <div className="w-1/4 flex justify-start	 items-center pt-6 gap-2">
+                <div className="w-full md:w-1/4 flex justify-start	 items-center pt-6 gap-2">
                     <input className="hover:cursor-pointer" type="checkbox"
                         onChange={(e) => {
                             setFilter((prevData) => ({
@@ -48,7 +48,7 @@ const JobList = () => {
                         Fulltime Only
                     </span>
                 </div>
-                <div className="w-1/4 flex justify-center items-center pt-4">
+                <div className="w-full md:w-1/4 flex justify-center items-center pt-4">
                     <Button isLoading={isjobDataLoading} variant="regular"
                         onClick={onSearch}>
                         Search
