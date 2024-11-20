@@ -10,8 +10,8 @@ const providers= [
     // ...add more providers here
 ];
 export async function GET( req:any,res:any ) {
-    return NextAuth(req,res,{providers:providers})
+    return NextAuth(req,res,{providers:providers,secret:process.env.NEXT_PUBLIC_SECRET})
     }
     export async function POST( req:any,res:any ) {
-        return NextAuth(req,res,{providers:providers})
+        return NextAuth(req,res,{providers:providers,secret:process.env.NEXT_PUBLIC_SECRET})
         }
